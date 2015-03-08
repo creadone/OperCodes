@@ -25,7 +25,7 @@ class OpCodes < Grape::API
    	   		db.execute( "SELECT * FROM numbers WHERE abcdef = #{phone_number.area_code.to_s} LIMIT 1") do |row|
   				query_result << row
 			end
-			query_result
+			query_result.flatten()
   		end
 
 	end
