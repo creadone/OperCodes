@@ -7,7 +7,7 @@
 6. Запустить сервис: <code>rackup</code>
 7. Сходить по ссылке: <code>http://localhost:9292/api/v1/code/get_provider/?number=9151234567</code>, где 9151234567 — номер мобильного телефона.
 8. Если все хорошо, то в ответ вернется что-то в духе:
-<code><pre>
+```json
 {
         abcdef: 926,
         start: 0,
@@ -18,4 +18,5 @@
         region: null,
         area: null,
         area1: null
-}</pre></code>
+}
+```
