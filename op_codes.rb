@@ -24,9 +24,10 @@ class OpCodes < Grape::API
   			query_result.clear
 
    	   		phone_number = Phoner::Phone.parse(params[:number])
-   	   		db.execute( "SELECT * FROM numbers WHERE abcdef = #{phone_number.area_code.to_s} LIMIT 1") do |row|
+   	   		db.execute( "SELECT * FROM numbers WHERE abcdef = #{phone_number.area_code.to_s}") do |row|
   				query_result << row
 			end
+			
 			Hash[db_fields.zip(query_result.flatten)]
   		end
 
