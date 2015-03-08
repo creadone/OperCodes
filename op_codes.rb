@@ -10,6 +10,7 @@ class OpCodes < Grape::API
   	rescue_from :all
 
   	db = SQLite3::Database.new "codes.db"
+  	db_fields = %w(abcdef start end capacity provider city region area area1)
   	query_result = []
 
 	resource :code do
@@ -26,8 +27,7 @@ class OpCodes < Grape::API
    	   		db.execute( "SELECT * FROM numbers WHERE abcdef = #{phone_number.area_code.to_s} LIMIT 1") do |row|
   				query_result << row
 			end
-			
-			query_result.flatten()
+			Hash[db_fields.zip(query_result.flatten)]
   		end
 
 	end
