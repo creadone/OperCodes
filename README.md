@@ -1,4 +1,5 @@
 Как с этим взлететь:
+
 1. Клонировать репозиторий: <code>git clone https://github.com/creadone/OperCodes.git</code>
 2. Установить полезные гемы: <code>bundle install</code>
 4. Запустить загрузку данных: <code>ruby downloader.rb</code>
